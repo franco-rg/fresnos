@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles-final.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <style>
+        body{
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .slider{
+            width: 70px;
+            top: 0;
+            left: 0;
+            background: #11101d;
+            color: #fff;
+            position: fixed;
+            transition: all .3s ease-in-out;
+        }
+        .home_content{
+            position: absolute;
+            height: 100%;
+            width: calc(100% - 70px);
+            left: 70px;
+            transition: all .3s ease-in-out;
+        }
+
+        #btnOpen{
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .slider.active{
+            width: 240px;
+        }
+
+        .slider.active ul li button span {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: visible;
+        }
+
+        .slider ul li button span{
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .3s ease-in-out;
+        }
+
+        .slider.active ~ .home_content{
+            width: calc(100% - 240px);
+            left: 240px;
+        }
+
+        @media screen and (max-width: 400px){
+            .slider{
+                display: none;
+            }
+
+            .slider ~ .home_content{
+                left: 0;
+            }
+        }
+
+    </style>
+
+    <div class="slider h-screen px-6 py-14">
+        <div class="logo-content">
+            <div class="logo">
+                <!-- logo icon -->
+            </div>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <button id="btnOpen">
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Dashboard</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="home_content">
+        <div class="h-44 pt-6 px-6" style="background-color: #1C96B0;">
+            <div class="container m-auto px-32">
+                <h1 class="text text-3xl text-white">Facturacion</h1>
+                <span class="text text-md text-white">Listado</span>
+
+                <div class="bg-gray-50 mt-8 m-auto rounded-lg shadow-xl" style="height: 80vh">
+                </div>
+            </div>
+        </div>        
+    </div>
+
+
+    <script type="text/javascript">
+        let btn = document.querySelector("#btnOpen");
+        let slideBar = document.querySelector(".slider");
+
+        btn.onclick = function(){
+            slideBar.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
