@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="styles-final.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <style>
+        body {
+            width: 100%;
+        }
+
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .slider {
+            width: 70px;
+            top: 0;
+            left: 0;
+            background: #151D16;
+            color: #fff;
+            position: fixed;
+            transition: all .3s ease-in-out;
+        }
+
+        .home_content {
+            position: absolute;
+            width: calc(100% - 70px);
+            left: 70px;
+            transition: all .3s ease-in-out;
+            height: 100vh;
+        }
+
+        .slider ul li button {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .slider.active {
+            width: 240px;
+        }
+
+        .slider.active ul li button span {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: visible;
+        }
+
+        .slider ul li button span {
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .3s ease-in-out;
+        }
+
+        .slider.active~.home_content {
+            width: calc(100% - 240px);
+            left: 240px;
+        }
+
+        .slider.active>.nav_list {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        @media screen and (max-width: 400px) {
+            .slider {
+                display: none;
+            }
+
+            .slider~.home_content {
+                left: 0;
+            }
+        }
+
+        .nav_list {
+            height: 70%;
+            overflow: hidden;
+        }
+
+        .nav_list::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        .nav_list::-webkit-scrollbar-thumb {
+            background-color: #585858;
+            border-radius: 7px;
+        }
+
+        body::-webkit-scrollbar {
+            width: 7px;
+            background-color: #FAFAFA;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: #adadad;
+            border-radius: 10px;
+        }
+
+        .slider ul li {
+            margin-bottom: 25px;
+        }
+
+        .slider.active .logout a p {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: visible;
+        }
+
+        .slider .logout a p {
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            transition: all .3s ease-in-out;
+        }
+
+        .logout {
+            position: absolute;
+            bottom: 0px;
+            padding: 10px 0;
+            width: 100%;
+            left: 0px;
+            background-color: #48614b;
+            padding-left: 30px;
+        }
+    </style>
+
+    <div class="slider h-full px-6 py-14 relative z-50">
+        <div class="logo relative mb-12 flex justify-center">
+            <a href="#">
+                <img class="min-w-full" src="/src/img/logo-img.png" style="min-width: 70px;">
+            </a>
+        </div>
+        <button id="btnOpen"
+            class="btn-openMenu absolute top-4 -right-4 text-white bg-cherry-100 rounded-xl px-2 py-1 text-lg shadow-xl outline-none">
+            <i class="fa-solid fa-circle-chevron-right"></i>
+        </button>
+        <ul class="nav_list">
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+            <li>
+                <button>
+                    <i class="fa-solid fa-file-invoice"></i>
+                    <span class="links_name">Facturación</span>
+                </button>
+            </li>
+        </ul>
+
+        <div class="logout">
+            <a href="#" class="flex gap-4 items-center">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+                <p class="pb-1">Opciones</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="home_content relative">
+        <div class="h-36 xl:h-32 pt-4 px-6 bg-cherry-200">
+            <div class="container m-auto px-8 lg:px-10 pb-20">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text text-sm lg:text-2xl font-medium uppercase poppins text-white">Facturación</h1>
+                        <span class="text text-sm text-white">Formulario</span>
+                    </div>
+                    <div>
+                        <p class="text-white tracking-wide">Clinica Fresnos 2022 | Facturación</p>
+                    </div>
+                </div>
+                <div class="mt-4 rounded-lg shadow-xl p-8 h-auto mb-20" style="background-color: #FAFAFA;">
+
+                    <div class="border-b mb-6 border-gray-200 dark:border-gray-700">
+                        <ul class="flex flex-wrap -mb-px">
+                            <li class="mr-2">
+                                <a href="#" class="inline-block py-4 px-4 text-base font-medium text-center text-cherry-100 hover:text-cherry-200 transition-all duration-200 rounded-t-lg border-b-2 border-cherry-300 activearia-current="page">Dashboard</a>
+                            </li>
+                            <li>
+                                <a class="inline-block py-4 px-4 text-base font-medium text-center text-gray-400 rounded-t-lg cursor-not-allowed">Item</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <form>
+                        <div class="grid grid-cols-12 gap-3">
+                            <div class="col-span-8 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Razón Social">
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Serie Factura" disabled>
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Numero Factura">
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="date" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="F.Factura">
+                            </div>
+                            <div class="col-span-2 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Numero Liquidacion">
+                            </div>
+                            <div class="col-span-2 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="date" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="F.Liquidacion">
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100 opacity-0">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Factura Referenciada">
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100 opacity-0">Campo Obligatorio *</label>
+                                <input type="number" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="N° Liquidacion">
+                            </div>
+                            <div class="col-span-2 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <select type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Seleccione"></select>
+                            </div>
+                            <div class="col-span-2 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <select type="date" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Seleccione"></select>
+                            </div>
+                            <div class="col-span-8 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Nombre Paciente">
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Cierre Aseguradora" disabled>
+                            </div>
+                            <div class="col-span-8 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="N° Póliza o Plan Salud">
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Nombre Póliza o Plan Salud" disabled>
+                            </div>
+
+                            <div class="col-span-full py-2">
+                                <h3 class="text-green-700 my-2 text-lg"><i class="fa-solid fa-money-bill-1"></i> Gastos e Importes</h3>
+                                <div class="w-full border-t-2 border-gray-200"></div>
+                            </div>
+
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="text" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Importe Factura sin IGV">
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="number" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="IGV" disabled>
+                            </div>
+                            <div class="col-span-4 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="number" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Importe Factura con IGV" disabled>
+                            </div>
+
+                            <div class="col-span-8 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="number" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Total de Gastos" disabled>
+                            </div>
+
+                            <div class="col-span-2 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="number" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Tipo Deducible" disabled>
+                            </div>
+                            <div class="col-span-2 flex flex-col">
+                                <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
+                                <input type="number" class="p-2.5 rounded-md border-gray-300 focus:shadow-md transition-all duration-200 border outline-none"
+                                    placeholder="Total Coaseguro" disabled>
+                            </div>
+
+                            <!-- Buttons Form -->
+                            <div class="col-start-9 col-end-11 flex flex-col mt-3">
+                                <button
+                                    class="px-2 py-3 rounded-md text-xs bg-red-400 text-cherry-300 border outline-none"
+                                    id="addObs">Observaciones <i class="fa-solid fa-magnifying-glass-plus"></i></button>
+                            </div>
+                            <div class="col-span-2 flex flex-col mt-3">
+                                <button
+                                    class="px-2 py-3 rounded-md text-xs bg-green-700 hover:bg-green-800 text-white outline-none">Adjuntar
+                                    Documentos <i class="fa-solid fa-cloud-arrow-up"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog"
+        id="modalObservacion">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+
+            <!-- This element is to trick the browser into centering the modal contents. -->
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-cherry-200 text-base font-medium text-white sm:ml-3 sm:w-auto sm:text-sm">Guardar Cambios</button>
+                    <button type="button"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                        id="btnCancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </transition>
+
+
+    <script type="text/javascript">
+        let btn = document.querySelector("#btnOpen");
+        let slideBar = document.querySelector(".slider");
+
+        btn.onclick = function () {
+            slideBar.classList.toggle("active");
+        }
+
+        let modal = document.getElementById('modalObservacion');
+        let btnObs = document.getElementById('addObs');
+        let btnCancel = document.getElementById('btnCancel');
+        btnObs.onclick = function () {
+            modal.classList.remove('hidden');
+        }
+
+        btnCancel.onclick = function () {
+            modal.classList.add('hidden');
+        }
+    </script>
+</body>
+
+</html>
