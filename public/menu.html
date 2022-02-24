@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="styles-final.css">
+    <link rel="stylesheet" href="styles-others.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,129 +22,7 @@
 </head>
 
 <body>
-    <style>
-        body {
-            width: 100%;
-        }
-
-        .poppins {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .slider {
-            width: 70px;
-            top: 0;
-            left: 0;
-            background: #151D16;
-            color: #fff;
-            position: fixed;
-            transition: all .3s ease-in-out;
-        }
-
-        .home_content {
-            position: absolute;
-            width: calc(100% - 70px);
-            left: 70px;
-            transition: all .3s ease-in-out;
-            height: 100vh;
-        }
-
-        .slider ul li button {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .slider.active {
-            width: 240px;
-        }
-
-        .slider.active ul li button span {
-            visibility: visible;
-            opacity: 1;
-            pointer-events: visible;
-        }
-
-        .slider ul li button span {
-            visibility: hidden;
-            opacity: 0;
-            pointer-events: none;
-            transition: all .3s ease-in-out;
-        }
-
-        .slider.active~.home_content {
-            width: calc(100% - 240px);
-            left: 240px;
-        }
-
-        .slider.active>.nav_list {
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        @media screen and (max-width: 400px) {
-            .slider {
-                display: none;
-            }
-
-            .slider~.home_content {
-                left: 0;
-            }
-        }
-
-        .nav_list {
-            height: 70%;
-            overflow: hidden;
-        }
-
-        .nav_list::-webkit-scrollbar {
-            width: 7px;
-        }
-
-        .nav_list::-webkit-scrollbar-thumb {
-            background-color: #585858;
-            border-radius: 7px;
-        }
-
-        body::-webkit-scrollbar {
-            width: 7px;
-            background-color: #FAFAFA;
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background-color: #adadad;
-            border-radius: 10px;
-        }
-
-        .slider ul li {
-            margin-bottom: 25px;
-        }
-
-        .slider.active .logout a p {
-            visibility: visible;
-            opacity: 1;
-            pointer-events: visible;
-        }
-
-        .slider .logout a p {
-            visibility: hidden;
-            opacity: 0;
-            pointer-events: none;
-            transition: all .3s ease-in-out;
-        }
-
-        .logout {
-            position: absolute;
-            bottom: 0px;
-            padding: 10px 0;
-            width: 100%;
-            left: 0px;
-            background-color: #285020;
-            padding-left: 30px;
-        }
-    </style>
-
-    <div class="slider h-full px-6 py-14 relative z-50">
+    <nav class="slider h-full px-6 py-14 z-50 top-0 left-0 text-white fixed transition-all duration-300 ease-in-out">
         <div class="logo relative mb-12 flex justify-center">
             <a href="#">
                 <img class="min-w-full" src="/src/img/logo-img.png" style="min-width: 70px;">
@@ -153,7 +32,7 @@
             class="btn-openMenu absolute top-4 -right-4 text-white bg-cherry-100 rounded-xl px-2 py-1 text-lg shadow-xl outline-none">
             <i class="fa-solid fa-circle-chevron-right"></i>
         </button>
-        <ul class="nav_list">
+        <ul class="nav_list h-3/4 overflow-hidden">
             <li>
                 <button>
                     <i class="fa-solid fa-file-invoice"></i>
@@ -216,15 +95,15 @@
             </li>
         </ul>
 
-        <div class="logout">
+        <div class="logout absolute bottom-0 left-0 py-2 px-0 w-full bg-green-900 opacity-95">
             <a href="#" class="flex gap-4 items-center">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
                 <p class="pb-1">Opciones</p>
             </a>
         </div>
-    </div>
+    </nav>
 
-    <div class="home_content relative">
+    <div class="content-page relative transition-all duration-300 ease-in-out h-screen">
         <div class="h-36 xl:h-32 bg-cherry-200">
             <div class="container h-full m-auto px-8 lg:px-10">
                 <div class="flex justify-between items-center h-full">

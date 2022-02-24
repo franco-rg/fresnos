@@ -5,45 +5,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Login</title>
   <link rel="stylesheet" href="styles-final.css">
+  <link rel="stylesheet" href="styles-others.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
-</head>
+</head> 
 
-<style>
-    #image {
-      background-color: rgba(0,0,0,0.8);
-      background-image:url(../src/img/peakpx.jpg);
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      height: 100vh;
-      width: 100%;
-    }
-
-    /* #image:before {
-	    content:'';
-	    position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(0, 0, 0, 0.068);
-    } */
-    
-    .poppins{
-      font-family: 'Poppins', sans-serif;
-    }
-</style>
-
-<body id="image">
+<body id="image" class="bg-no-repeat bg-fixed bg-cover h-screen w-full">
   <div class="mx-2 h-full relative">
     <div class="flex flex-col sm:flex-row m-auto h-full px-0 sm:px-2 lg:px-0">
       <div class="m-auto text-center sm:text-left">
-        <h3 class="text-white text-2xl sm:text-2xl md:text-4xl font-semibold uppercase tracking-wide poppins 2xl:text-5xl">Sistema Facturador</h3>
+        <h3
+          class="text-white text-2xl sm:text-2xl md:text-4xl font-semibold uppercase tracking-wide poppins 2xl:text-5xl">
+          Sistema Facturador</h3>
         <label class="text-white sm:text-xl md:text-2xl">Clinica Los Frenos</label>
       </div>
       <div class="md:w-80 lg:w-96 m-auto bg-white border-cherry-100 border-t-8 rounded shadow-xl px-6 py-9 sm:px-7">
@@ -53,23 +30,28 @@
         <form>
           <div class="mb-4 mt-4">
             <label class="block text-gray-500 text-sm font-bold mb-1" for="username">Usuario</label>
-            <input class="border rounded w-full py-2 px-3 text-gray-700 outline-none focus:border-gray-400" id="username"
-              type="text" placeholder="Username">
+            <input class="border rounded w-full py-2 px-3 text-gray-700 outline-none focus:border-gray-400"
+              id="username" type="text" placeholder="Username">
           </div>
           <div class="mb-16">
             <label class="block text-gray-500 text-sm font-bold mb-1" for="password">Contraseña</label>
-            <input class="border rounded w-full py-2 px-3 text-gray-700 outline-none focus:border-gray-400" id="password" type="password" placeholder="******************">
+            <input class="border rounded w-full py-2 px-3 text-gray-700 outline-none focus:border-gray-400"
+              id="password" type="password" placeholder="******************">
           </div>
           <hr class="mb-5">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            <a class="flex justify-center bg-none hover:bg-gray-200 transition ease-in-out duration-300 items-center text-gray-900 font-bold text-base md:text-sm py-3 md:py-2 md:px-7 rounded" href="#">
+            <a class="flex justify-center bg-none hover:bg-gray-200 transition ease-in-out duration-300 items-center text-gray-900 font-bold text-base md:text-sm py-3 md:py-2 md:px-7 rounded"
+              href="#">
               <img src="../src/img/google-icon.png" class="w-5 h-5" alt=""> &nbsp;Google
             </a>
-            <button class="bg-cherry-200 hover:bg-cherry-300 transition-all duration-200 text-white font-bold text-base md:text-sm py-3 md:py-2 md:px-7 rounded focus:outline-none" type="submit">Acceder</button>
+            <button
+              class="bg-cherry-200 hover:bg-cherry-300 transition-all duration-200 text-white font-bold text-base md:text-sm py-3 md:py-2 md:px-7 rounded focus:outline-none"
+              type="submit">Acceder</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </body>
+
 </html>

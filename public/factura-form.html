@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Factura Form</title>
     <link rel="stylesheet" href="styles-final.css">
+    <link rel="stylesheet" href="styles-others.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,148 +22,7 @@
 </head>
 
 <body>
-    <style>
-        body {
-            width: 100%;
-        }
-
-        .poppins {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .slider {
-            width: 70px;
-            top: 0;
-            left: 0;
-            background: #151D16;
-            color: #fff;
-            position: fixed;
-            transition: all .3s ease-in-out;
-        }
-
-        .home_content {
-            position: absolute;
-            width: calc(100% - 70px);
-            left: 70px;
-            transition: all .3s ease-in-out;
-            height: 100vh;
-        }
-
-        .slider ul li button {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .slider.active {
-            width: 240px;
-        }
-
-        .slider.active ul li button span {
-            visibility: visible;
-            opacity: 1;
-            pointer-events: visible;
-        }
-
-        .slider ul li button span {
-            visibility: hidden;
-            opacity: 0;
-            pointer-events: none;
-            transition: all .3s ease-in-out;
-        }
-
-        .slider.active~.home_content {
-            width: calc(100% - 240px);
-            left: 240px;
-        }
-
-        .slider.active>.nav_list {
-            overflow-y: auto;
-            overflow-x: hidden;
-        }
-
-        @media screen and (max-width: 400px) {
-            .slider {
-                display: none;
-            }
-
-            .slider~.home_content {
-                left: 0;
-            }
-        }
-
-        .nav_list {
-            height: 70%;
-            overflow: hidden;
-        }
-
-        .nav_list::-webkit-scrollbar {
-            width: 7px;
-        }
-
-        .nav_list::-webkit-scrollbar-thumb {
-            background-color: #585858;
-            border-radius: 7px;
-        }
-
-        body::-webkit-scrollbar {
-            width: 7px;
-            background-color: #FAFAFA;
-        }
-
-        body::-webkit-scrollbar-thumb {
-            background-color: #adadad;
-            border-radius: 10px;
-        }
-
-        .slider ul li {
-            margin-bottom: 25px;
-        }
-
-        .slider.active .logout a p {
-            visibility: visible;
-            opacity: 1;
-            pointer-events: visible;
-        }
-
-        .slider .logout a p {
-            visibility: hidden;
-            opacity: 0;
-            pointer-events: none;
-            transition: all .3s ease-in-out;
-        }
-
-        .logout {
-            position: absolute;
-            bottom: 0px;
-            padding: 10px 0;
-            width: 100%;
-            left: 0px;
-            background-color: #285020;
-            padding-left: 30px;
-        }
-
-        input[type="radio"]+label span {
-            transition: background .2s,
-                transform .2s;
-        }
-
-        input[type="radio"]+label span:hover,
-        input[type="radio"]+label:hover span {
-            transform: scale(1.2);
-        }
-
-        input[type="radio"]:checked+label span {
-            background-color: #3490DC;
-            box-shadow: 0px 0px 0px 2px white inset;
-        }
-
-        input[type="radio"]:checked+label {
-            color: #3490DC;
-        }
-    </style>
-
-    <div class="slider h-full px-6 py-14 relative z-50">
+    <nav class="slider h-full px-6 py-14 z-50 top-0 left-0 text-white fixed transition-all duration-300 ease-in-out">
         <div class="logo relative mb-12 flex justify-center">
             <a href="#">
                 <img class="min-w-full" src="/src/img/logo-img.png" style="min-width: 70px;">
@@ -172,7 +32,7 @@
             class="btn-openMenu absolute top-4 -right-4 text-white bg-cherry-100 rounded-xl px-2 py-1 text-lg shadow-xl outline-none">
             <i class="fa-solid fa-circle-chevron-right"></i>
         </button>
-        <ul class="nav_list">
+        <ul class="nav_list h-3/4 overflow-hidden">
             <li>
                 <button>
                     <i class="fa-solid fa-file-invoice"></i>
@@ -235,16 +95,16 @@
             </li>
         </ul>
 
-        <div class="logout">
+        <div class="logout absolute bottom-0 left-0 py-2 px-0 w-full bg-green-900 opacity-95">
             <a href="#" class="flex gap-4 items-center">
                 <i class="fa-solid fa-ellipsis-vertical"></i>
                 <p class="pb-1">Opciones</p>
             </a>
         </div>
-    </div>
+    </nav>
 
-    <div class="home_content relative">
-        <div class="h-36 xl:h-32 pt-4 px-6 bg-cherry-200">
+    <div class="content-page relative transition-all duration-300 ease-in-out h-screen">
+        <div class="h-36 xl:h-32 pt-4 px-6 bg-cherry-200 relative">
             <div class="container m-auto px-8 lg:px-10 pb-20">
                 <div class="flex justify-between items-center">
                     <div>
@@ -261,8 +121,7 @@
                         <ul class="flex flex-wrap -mb-px">
                             <li class="mr-2">
                                 <a href="#"
-                                    class="inline-block py-4 px-4 text-base font-medium text-center text-cherry-100 hover:text-cherry-200 transition-all duration-200 rounded-t-lg border-b-2 border-cherry-300 activearia-current="
-                                    page">Dashboard</a>
+                                    class="inline-block py-4 px-4 text-base font-medium text-center text-cherry-100 hover:text-cherry-200 transition-all duration-200 rounded-t-lg border-b-2 border-cherry-300">Dashboard</a>
                             </li>
                             <li>
                                 <a
@@ -421,10 +280,10 @@
         </div>
     </div>
 
-    <div class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog"
+    <div class="fixed z-50 inset-0 overflow-y-hidden hidden" aria-labelledby="modal-title" role="dialog"
         id="modalObservacion">
         <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-90 transition-opacity" aria-hidden="true"></div>
 
             <!-- This element is to trick the browser into centering the modal contents. -->
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
@@ -448,7 +307,7 @@
                                 <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
                                 Second choice</label>
                         </div>
-    
+
                         <div class="mr-4 mb-4">
                             <input id="radio3" type="radio" name="radio" class="hidden" />
                             <label for="radio3" class="flex items-center cursor-pointer">
@@ -456,7 +315,7 @@
                                 Third choice</label>
                         </div>
                     </div>
-                    
+
                     <div class="grid grid-cols-12 gap-3">
                         <div class="col-span-full flex flex-col">
                             <label class="text-xs text-cherry-100">Campo Obligatorio *</label>
@@ -485,7 +344,6 @@
             </div>
         </div>
     </div>
-    </transition>
 
 
     <script type="text/javascript">
@@ -501,10 +359,12 @@
         let btnCancel = document.getElementById('btnCancel');
         btnObs.onclick = function () {
             modal.classList.remove('hidden');
+            document.body.classList.add('overflow-y-hidden');
         }
 
         btnCancel.onclick = function () {
             modal.classList.add('hidden');
+            document.body.classList.remove('overflow-y-hidden');
         }
     </script>
 </body>
