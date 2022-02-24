@@ -104,7 +104,7 @@
     </nav>
 
     <div class="content-page relative transition-all duration-300 ease-in-out h-screen">
-        <div class="h-36 xl:h-32 bg-cherry-200">
+        <div class="h-28 xl:h-20 bg-cherry-200">
             <div class="container h-full m-auto px-8 lg:px-10">
                 <div class="flex justify-between items-center h-full">
                     <div>
@@ -120,115 +120,121 @@
         <div class="container p-8 lg:px-10 m-auto relative">
             <div class="mt-4 rounded-lg shadow-xl p-8 h-auto mb-20" style="background-color: #FAFAFA;">
 
-                <div class="border-b mb-6 border-gray-200 dark:border-gray-700">
-                    <ul class="flex flex-wrap -mb-px">
-                        <li class="mr-2">
-                            <a href="#" class="inline-block py-4 px-4 text-base font-medium text-center text-cherry-100 hover:text-cherry-200 transition-all duration-200 rounded-t-lg border-b-2 border-cherry-300">Home</a>
-                        </li>
-                        <li>
-                            <a class="inline-block py-4 px-4 text-base font-medium text-center text-gray-400 rounded-t-lg cursor-not-allowed">Modulos</a>
-                        </li>
-                    </ul>
+                <div>
+                    <div class="lbl-menu">
+                        <div class="border-b mb-6 border-gray-200">
+                            <ul class="flex flex-wrap -mb-px">
+                                <li data-tab-target="#home" class="mr-2 tab active">
+                                    <a href="#" class="inline-block py-4 px-4 text-base font-medium text-center text-cherry-100 hover:text-cherry-200 transition-all duration-200 rounded-t-lg border-b-2">Home</a>
+                                </li>
+                                <li data-tab-target="#modules" class="tab">
+                                    <a class="inline-block py-4 px-4 text-base font-medium text-center text-gray-400 rounded-t-lg cursor-pointer">Modulos</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+
+                        
+                    </div>
                 </div>
 
-                <div class="grid grid-cols-12 gap-8">
-                    <div class="col-span-4">
-                        <div class="w-full rounded-xl border shadow bg-white">
-                            <div class="flex flex-col items-center py-10">
-                                <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden bg-white">
-                                    <img src="/src/img/kindpng_248253.png" class="w-full">
+
+                <div class="container-tabs">
+                    <div class="grid grid-cols-12 gap-8 active" id="home" data-tab-content>
+                        <div class="col-span-4">
+                            <div class="w-full rounded-xl border shadow bg-white">
+                                <div class="flex flex-col items-center py-10">
+                                    <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden bg-white">
+                                        <img src="/src/img/kindpng_248253.png" class="w-full">
+                                    </div>
+                                    <h3 class="mb-1 text-xl font-medium text-gray-900">Franco Rodriguez</h3>
+                                    <span class="text-sm text-gray-500 dark:text-gray-400 tracking-widest">FACTURADOR</span>
+                                    <div class="flex mt-4 space-x-3 lg:mt-6">
+                                        <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Editar Perfil</a>
+                                        <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 rounded-lg border border-gray-300 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100">Cambiar Contraseña</a>
+                                    </div>
                                 </div>
-                                <h3 class="mb-1 text-xl font-medium text-gray-900">Franco Rodriguez</h3>
-                                <span class="text-sm text-gray-500 dark:text-gray-400 tracking-widest">FACTURADOR</span>
-                                <div class="flex mt-4 space-x-3 lg:mt-6">
-                                    <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Editar Perfil</a>
-                                    <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 rounded-lg border border-gray-300 hover:bg-gray-200 focus:ring-4 focus:ring-gray-100">Cambiar Contraseña</a>
+                            </div>
+                        </div>
+                        <div class="col-span-8">
+                            <div class="w-full h-full rounded-xl border bg-white shadow">
+                                <div class="flex flex-col items-center h-full justify-center py-10">
+                                    <i class="fa-solid fa-triangle-exclamation text-5xl text-cherry-100 mb-2"></i>
+                                    <h1 class="text-3xl">Alertas</h1>
+                                    <span class="text-lg font-semibold text-cherry-100">No hay nada por visualizar aún.</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-8">
-                        <div class="w-full h-full rounded-xl border bg-white shadow">
-                            <div class="flex flex-col items-center h-full justify-center py-10">
-                                <i class="fa-solid fa-triangle-exclamation text-5xl text-cherry-100 mb-2"></i>
-                                <h1 class="text-3xl">Alertas</h1>
-                                <span class="text-lg font-semibold text-cherry-100">No hay nada por visualizar aún.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="my-8">
-                    <h3 class="text-xl text-cherry-300 font-semibold py-2">Modulos</h3>
-                    <div class="w-full border-t-2 border-gray-300"></div>
-                </div>
-    
-                <div class="grid grid-cols-12 gap-8">
-                    <div class="col-span-4">
-                        <div class="w-full h-full rounded-xl border bg-white shadow">
-                            <div class="flex flex-col items-center py-10">
-                                <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
-                                    <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
-                                </div>
-                                <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
-                                <div class="flex mt-4 space-x-3 lg:mt-6">
-                                    <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+        
+                    <div class="grid grid-cols-12 gap-8" id="modules" data-tab-content>
+                        <div class="col-span-4">
+                            <div class="w-full h-full rounded-xl border bg-white shadow">
+                                <div class="flex flex-col items-center py-10">
+                                    <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
+                                        <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
+                                    </div>
+                                    <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
+                                    <div class="flex mt-4 space-x-3 lg:mt-6">
+                                        <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-    
-                    <div class="col-span-4">
-                        <div class="w-full h-full rounded-xl border bg-white shadow">
-                            <div class="flex flex-col items-center py-10">
-                                <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
-                                    <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
-                                </div>
-                                <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
-                                <div class="flex mt-4 space-x-3 lg:mt-6">
-                                    <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    <div class="col-span-4">
-                        <div class="w-full h-full rounded-xl border bg-white shadow">
-                            <div class="flex flex-col items-center py-10">
-                                <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
-                                    <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
-                                </div>
-                                <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
-                                <div class="flex mt-4 space-x-3 lg:mt-6">
-                                    <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+        
+                        <div class="col-span-4">
+                            <div class="w-full h-full rounded-xl border bg-white shadow">
+                                <div class="flex flex-col items-center py-10">
+                                    <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
+                                        <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
+                                    </div>
+                                    <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
+                                    <div class="flex mt-4 space-x-3 lg:mt-6">
+                                        <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-    
-                    <div class="col-span-4">
-                        <div class="w-full h-full rounded-xl border bg-white shadow">
-                            <div class="flex flex-col items-center py-10">
-                                <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
-                                    <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
-                                </div>
-                                <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
-                                <div class="flex mt-4 space-x-3 lg:mt-6">
-                                    <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+        
+                        <div class="col-span-4">
+                            <div class="w-full h-full rounded-xl border bg-white shadow">
+                                <div class="flex flex-col items-center py-10">
+                                    <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
+                                        <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
+                                    </div>
+                                    <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
+                                    <div class="flex mt-4 space-x-3 lg:mt-6">
+                                        <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-    
-                    <div class="col-span-4">
-                        <div class="w-full h-full rounded-xl border bg-white shadow">
-                            <div class="flex flex-col items-center py-10">
-                                <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
-                                    <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
+        
+                        <div class="col-span-4">
+                            <div class="w-full h-full rounded-xl border bg-white shadow">
+                                <div class="flex flex-col items-center py-10">
+                                    <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
+                                        <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
+                                    </div>
+                                    <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
+                                    <div class="flex mt-4 space-x-3 lg:mt-6">
+                                        <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+                                    </div>
                                 </div>
-                                <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
-                                <div class="flex mt-4 space-x-3 lg:mt-6">
-                                    <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+                            </div>
+                        </div>
+        
+                        <div class="col-span-4">
+                            <div class="w-full h-full rounded-xl border bg-white shadow">
+                                <div class="flex flex-col items-center py-10">
+                                    <div class="mb-3 w-24 h-24 rounded-full shadow-lg overflow-hidden flex justify-center items-center">
+                                        <i class="fa-solid fa-file-lines text-4xl text-green-800"></i>
+                                    </div>
+                                    <h3 class="mb-1 text-xl font-medium text-gray-900">Facturación</h3>
+                                    <div class="flex mt-4 space-x-3 lg:mt-6">
+                                        <a href="#" class="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-cherry-200 rounded-lg">Vamos allá</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -238,23 +244,28 @@
         </div>    
     </div>
     <script type="text/javascript">
+
         let btn = document.querySelector("#btnOpen");
         let slideBar = document.querySelector(".slider");
 
         btn.onclick = function () {
             slideBar.classList.toggle("active");
-        }
+        };
 
-        let modal = document.getElementById('modalObservacion');
-        let btnObs = document.getElementById('addObs');
-        let btnCancel = document.getElementById('btnCancel');
-        btnObs.onclick = function () {
-            modal.classList.remove('hidden');
-        }
+        const tabs = document.querySelectorAll('[data-tab-target]');
+        const tabContents = document.querySelectorAll('[data-tab-content]');
 
-        btnCancel.onclick = function () {
-            modal.classList.add('hidden');
-        }
+        tabs.forEach(tab => {
+            tab.addEventListener('click', ()=>{
+                const target = document.querySelector(tab.dataset.tabTarget)
+                tabContents.forEach(tabContents => {
+                    tabContents.classList.remove('active');
+                })
+                target.classList.add('active');
+            })
+        });
+
+
     </script>
 </body>
 

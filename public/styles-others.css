@@ -90,11 +90,17 @@
     transition: all .3s ease-in-out;
 }
 
-
 .logout {
     padding-left: 30px;
 }
 
+[data-tab-content]{
+    display: none;
+}
+
+.active[data-tab-content]{
+    display: grid;
+}
 
 
 input[type="radio"]+label span {
